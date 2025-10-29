@@ -38,7 +38,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv(credentialsId: 'vish-sonarcloud-token', installationName: 'vish-sonarqube') {
+                withSonarQubeEnv(credentialsId: 'vj-sonar-token', installationName: 'vj-sq') {
                     sh '''#!/bin/bash
                         set -eux
                         echo "=== SonarQube installation ==="
@@ -50,8 +50,8 @@ pipeline {
 
                         echo "=== Running SonarQube Scanner ==="
                         sonar-scanner \
-                        -Dsonar.organization="vcltestorg01" \
-                        -Dsonar.projectKey="vcltestorg01_vcltestorg01" \
+                        -Dsonar.organization="jagadeeshvaranasi" \
+                        -Dsonar.projectKey="jagadeeshvaranasi_devsecops2" \
                         -Dsonar.host.url=https://sonarcloud.io \
                         -Dsonar.sources=. \
                         -Dsonar.python.coverage.reportPaths=coverage.xml \
