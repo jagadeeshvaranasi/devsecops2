@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'vj-security-agent'
+        label 'vj-ubuntu-a'
     }
     triggers {
         pollSCM('H/3 * * * *') // checks every 3 mins, or
